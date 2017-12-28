@@ -1,0 +1,6 @@
+Karl 40 23 12
+Johan 11 78 32 1
+Anders 10 10 40
+Johanna 59 21
+Maria 40 67 90
+Sune 59 32 63
