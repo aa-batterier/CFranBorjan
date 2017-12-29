@@ -46,6 +46,7 @@ FILE *open_file(char *text,char *kommando)
 
 int main(void)
 {
+	/* Tillhörande fil är data_log.txt. */
 	FILE *infil = open_file("Logfilen: ","r");
 	char rad[MAX_LINE],namn[MAX_LINE] = "";
 	int sum = 0;
