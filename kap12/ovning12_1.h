@@ -1,5 +1,5 @@
 struct bil
 {
-	char *regNr,*fabrikat;
+	char regNr[100],fabrikat[100];
 	int year,vikt,effekt;
 };
