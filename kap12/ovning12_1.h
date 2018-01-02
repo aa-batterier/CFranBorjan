@@ -1,5 +1,6 @@
+#define STORLEK 100
 struct bil
 {
-	char regNr[100],fabrikat[100];
+	char regNr[STORLEK],fabrikat[STORLEK];
 	int year,vikt,effekt;
 };
