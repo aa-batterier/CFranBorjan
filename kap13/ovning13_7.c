@@ -43,28 +43,36 @@ int main(void)
 {
 	struct abonnemang a[N];
 	int n = 0;
-	FILE *f = fopen("mobildata.txt","r");
+	FILE *f = fopen("mobildata2.txt","r");
 	while (fread_line(a[n].namn,ABNAMN_LANGD,f))
 	{
 		fscanf(f,"%lf%d%lf%lf%lf",&a[n].per_manad,&a[n].fria_min,&a[n].extra_min,&a[n].fria_gb,&a[n].extra_gb);
 		fskip_line(f);
 		n++;
 	}
-	setlocale(LC_ALL,"");
-	for (int i = 0; i < n; i++)
+	fclose(f);
+	for (;;)
 	{
-		int s = i;
-		for (int j = i; j < n; j++)
-			if (strcoll(a[j].namn,a[s].namn) < 0)
-				s = j;
-		struct abonnemang temp = a[i];
-		a[i] = a[s];
-		a[s] = temp;
+		printf("Abonnemanget du söker: ");
+		char sok[N];
+		if (!fread_line(sok,N,stdin))
+			break;
+		int m = 0,i1 = 0,i2 = n;
+		while (i1 <= i2)
+		{
+			m = (i1+i2)/2;
+			if (strcoll(a[m].namn,sok) < 0)
+				i1 = m+1;
+			else if (strcoll(a[m].namn,sok) > 0)
+				i2 = m-1;
+			else
+				break;
+		}
+		if (strcoll(a[m].namn,sok) == 0)
+			printf("Abonnemanget: %s\nPris per månad: %g\nFria minuter: %d\nExtra minuter: %g\nFria GB: %g\nExtra GB: %g\n",a[m].namn,a[m].per_manad,a[m].fria_min,a[m].extra_min,a[m].fria_gb,a[m].extra_gb);
+		else
+			printf("Abonnemanget du söker finns inte.\n");
 	}
-	setlocale(LC_ALL,"C");
-	FILE *nyFil = fopen("mobildata2.txt","w");
-	for (int i = 0; i < n; i++)
-		fprintf(nyFil,"%s\n%g %d %g %g %g\n",a[i].namn,a[i].per_manad,a[i].fria_min,a[i].extra_min,a[i].fria_gb,a[i].extra_gb);
-	fclose(nyFil);
+	printf("\n");
 	return 0;
 }
