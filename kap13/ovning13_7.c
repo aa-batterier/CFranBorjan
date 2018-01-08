@@ -62,9 +62,9 @@ int main(void)
 		{
 			m = (i1+i2)/2;
 			if (strcoll(a[m].namn,sok) < 0)
-				i1 = m+1;
-			else if (strcoll(a[m].namn,sok) > 0)
 				i2 = m-1;
+			else if (strcoll(a[m].namn,sok) > 0)
+				i1 = m+1;
 			else
 				break;
 		}
