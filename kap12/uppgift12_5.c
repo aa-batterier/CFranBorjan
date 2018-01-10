@@ -40,7 +40,7 @@ int main(void)
 		int antal;
 		if (scanf("%d",&antal) != 1 || antal == 0 || antal > 52)
 			break;
-		for (int i = start; i < antal; i++)
+		for (int i = start; i < antal+start && i < 52; i++)
 			printf("Kort %d:\nFärg: %d\nVärde: %d\n\n",i,kortlek[i].color,kortlek[i].value);
 		start += antal;
 	}
