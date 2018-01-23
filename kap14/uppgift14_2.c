@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include "list.h"
 
-#define N 10
-#define T 10000.0
-
 _Bool ar_sorterat(struct list *l)
 {
 	for (int i = 1; i < size(l); i++)
