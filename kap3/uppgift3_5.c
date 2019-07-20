@@ -21,6 +21,6 @@ int main(void)
 	else if(fabs(a-b) < e || fabs(a-c) < e || fabs(b-c) < e)
 		printf("Triangeln är likbent.\n");
 	else
-		printf("Triangeln är oliksidig."\n);
+		printf("Triangeln är oliksidig.\n");
 	return 0;
 }
