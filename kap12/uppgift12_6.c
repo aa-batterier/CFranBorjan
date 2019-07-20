@@ -6,7 +6,7 @@
 struct abonnemang
 {
 	char namn[ABNAMN_LANGD];
-	double per_manand;
+	double per_manad;
 	int fria_min;
 	double extra_min,fria_gb,extra_gb;
 };
@@ -14,7 +14,7 @@ struct abonnemang
 void skip_line(void)
 {
 	int c;
-	while ((c = getchar) != '\n' || c != EOF);
+	while ((c = getchar()) != '\n' || c != EOF);
 }
 
 int remove_nl(char *a)

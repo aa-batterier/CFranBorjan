@@ -29,6 +29,6 @@ int main(void)
 	}
 	printf("\nKort nr %d är billigast.\n",billigast+1);
 	printf("Kostnad: %4.2f kr/minut",pris[billigast]);
-	printf("\nMedelvärdet för priserna är %d\n",medel(pris,N));
+	printf("\nMedelvärdet för priserna är %f\n",medel(pris,N));
 	return 0;
 }
