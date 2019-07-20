@@ -6,7 +6,7 @@ int main(void)
 	double p1,p2 = 100000;
 	while (1)
 	{
-		printf("Pris/min för kort? %d", n+1);
+		printf("Pris/min för kort nr %d? ", n+1);
 		if (scanf("%le",&p1) != 1)
 			break;
 		if (p2 > p1)

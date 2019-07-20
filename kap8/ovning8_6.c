@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-#define 100
+#define N 100
 
-double medel(double pris[])
+double medel(double pris[], int antal)
 {
 	double sum = 0;
-	int antal = sizeof(pris)/sizeof(pris[0]);
 	for (int i = 0; i < antal; i++)
 		sum += pris[i];
 	return sum/antal;
@@ -30,6 +29,6 @@ int main(void)
 	}
 	printf("\nKort nr %d är billigast.\n",billigast+1);
 	printf("Kostnad: %4.2f kr/minut",pris[billigast]);
-	printf("\nMedelvärdet för priserna är %d\n",medel(pris));
+	printf("\nMedelvärdet för priserna är %d\n",medel(pris,N));
 	return 0;
 }
