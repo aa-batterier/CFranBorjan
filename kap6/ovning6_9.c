@@ -2,7 +2,7 @@
 
 double read_double(void);
 int read_int(void);
-double upphojt_till(double,double);
+double upphojt_till(double,int);
 
 int main(void)
 {
